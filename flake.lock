@@ -21,20 +21,37 @@
         "type": "github"
       }
     },
-    "nixpkgs": {
+    "nix-master": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
       "locked": {
-        "lastModified": 1615932248,
-        "narHash": "sha256-Xgc4/CFVp1L3/Qhai8n0Wyr9FCCOuRAfvWhaesLSPYc=",
+        "lastModified": 1617359833,
+        "narHash": "sha256-xz6TKiL1FIP3TQQVUFLMSFNw4CqGGwSu4qin35s+qu8=",
         "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "6557a3c1fe8ed87cc97c7c95668324847043dbdc",
+        "repo": "nix",
+        "rev": "fa8bc5329c1caee5a2455fcf1511b4e0a09d2c6a",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-20.09",
-        "repo": "nixpkgs",
+        "repo": "nix",
         "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1614309161,
+        "narHash": "sha256-93kRxDPyEW9QIpxU71kCaV1r+hgOgP6/aVgC7vvO8IU=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "0e499fde7af3c28d63e9b13636716b86c3162b93",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "ref": "nixos-20.09-small",
+        "type": "indirect"
       }
     },
     "nixpkgs-master": {
@@ -68,10 +85,27 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1615932248,
+        "narHash": "sha256-Xgc4/CFVp1L3/Qhai8n0Wyr9FCCOuRAfvWhaesLSPYc=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "6557a3c1fe8ed87cc97c7c95668324847043dbdc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-20.09",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs",
+        "nix-master": "nix-master",
+        "nixpkgs": "nixpkgs_2",
         "nixpkgs-master": "nixpkgs-master",
         "nixpkgs-unstable": "nixpkgs-unstable"
       }

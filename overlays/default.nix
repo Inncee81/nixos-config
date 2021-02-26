@@ -11,6 +11,9 @@
   # plasma5.kwin: Apply low latency patch.
   (import ./kwin)
 
+  # nix: Get from master branch.
+  (flakes.nix-master.overlay)
+
   # TODO Remove on 21.05.
   # plasma5Packages: Alias for packages related to Plasma 5.
   (_: prev: { plasma5Packages = prev.kdeApplications // prev.libsForQt5; })

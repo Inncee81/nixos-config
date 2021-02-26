@@ -5,13 +5,14 @@
       url = "github:nix-community/home-manager/release-20.09";
       inputs.nixpkgs.follows = "/nixpkgs";
     };
+    nix-master.url = "github:NixOS/nix";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-20.09";
     nixpkgs-master.url = "github:NixOS/nixpkgs";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
-  outputs =
-    { home-manager, nixpkgs, nixpkgs-master, nixpkgs-unstable, self }@flakes: {
+  outputs = { home-manager, nix-master, nixpkgs, nixpkgs-master
+    , nixpkgs-unstable, self }@flakes: {
       nixosConfigurations = let
 
         # The NixOS release to be compatible with for stateful data such as databases.
