@@ -1,7 +1,7 @@
-{ config, lib, linuxPackages_zen, ... }: {
+{ config, lib, pkgs-unstable, ... }: {
 
   # Use Zen kernel for better interactive performance.
-  boot.kernelPackages = linuxPackages_zen;
+  boot.kernelPackages = pkgs-unstable.linuxPackages_zen;
 
   # Enable support for additional filesystems.
   boot.supportedFilesystems = [ "exfat" "ntfs" "zfs" ];
