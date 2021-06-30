@@ -37,7 +37,7 @@ with prev; {
           PREEMPT_VOLUNTARY = lib.mkForce no;
 
           # Additional CPU optimizations
-          CC_OPTIMIZE_FOR_PERFORMANCE_O3 = yes;
+          #CC_OPTIMIZE_FOR_PERFORMANCE_O3 = yes;
 
           # BBRv2 TCP congestion control
           TCP_CONG_BBR2 = yes;
@@ -62,12 +62,15 @@ with prev; {
       src = zenCustom.configfile;
 
       dontUnpack = true;
+      # TODO Test if CONFIG_EFI_MIXED is needed.
       buildPhase = ''
         install -m644 $src .config
         cp ${linux_zen.src}/scripts/config config-script
         patchShebangs config-script
 
         ./config-script \
+          -e CONFIG_EFI_STUB \
+          -e CONFIG_EFI_MIXED \
           -e CONFIG_LTO_CLANG_THIN \
           -d CONFIG_LTO_NONE \
       '';
@@ -92,6 +95,7 @@ with prev; {
           '--thinlto-cache-dir=$(extmod-prefix).thinlto-cache' \
           '--thinlto-cache-dir=/build/source/build/.thinlto-cache'
     '';
+    dontStrip = true;
 
     passthru = old.passthru // { inherit (linux_zen) features; };
   });
