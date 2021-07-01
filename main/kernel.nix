@@ -5,6 +5,7 @@
 
   # Enable support for additional filesystems.
   boot.supportedFilesystems = [ "exfat" "ntfs" "zfs" ];
+  boot.zfs.enableUnstable = true; # Supports Linux 5.13.
   networking.hostId = lib.mkHostId config.networking.hostName; # Needed by ZFS.
 
   # Enable zram and use faster lzo-rle compression.
