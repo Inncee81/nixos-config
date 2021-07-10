@@ -17,6 +17,8 @@ with prev; {
         zfsStable = mkCommonOverride lprev.zfsStable;
 
         zfsUnstable = mkCommonOverride (lprev.zfsUnstable.overrideAttrs
+
+        # TODO Remove this override when updating flakes.
           (_: rec {
             version = "2.1.0-rc8";
 

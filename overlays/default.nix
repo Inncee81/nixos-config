@@ -3,11 +3,11 @@
   # gimpPlugins.bimp: Init
   (import ./gimpPlugins)
 
-  # linux_zen: Update, customize configuration & build with Clang LTO.
-  (import ./linux_zen)
+  # linux_5_13: Build with LLVM and enable LTO.
+  (import ./linux_5_13)
 
-  # linuxPackages_zen: Overlay needed for building ZFS with Clang.
-  (import ./linuxPackages_zen)
+  # linuxPackages*: Overlay needed for building ZFS with LLVM.
+  (import ./linuxPackages)
 
   # TODO Remove once https://github.com/NixOS/nixpkgs/pull/126960 is merged.
   # nixos-rebuild: Fix creating ./result symlink for flakes.
